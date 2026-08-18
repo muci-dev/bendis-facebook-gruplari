@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bendis Design — Dizi Sponsorlukları &amp; Facebook Grup Hedefleri</title>
+<meta name="description" content="Bendis Design'ın sponsor olduğu Türk dizilerine ve oyuncularına göre önceliklendirilmiş Facebook grup hedef listesi.">
+<style>
+  :root{
+    --bg:#faf9f7; --panel:#fff; --ink:#1c1a17; --muted:#6b6560;
+    --line:#e6e1d9; --accent:#8a6f3d; --soft:#f4eee2;
+    --ok:#3f7d5c; --warn:#9a6f2e;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#15140e; --panel:#1f1e16; --ink:#f2efe8; --muted:#a49c90;
+           --line:#33301f; --accent:#c9a961; --soft:#272115;
+           --ok:#7fae94; --warn:#c9a961; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:34px 20px 70px;
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Inter,system-ui,sans-serif}
+  .wrap{max-width:1260px;margin:0 auto}
+  h1{font-size:27px;margin:0 0 4px;letter-spacing:-.015em}
+  .sub{color:var(--muted);margin:0 0 20px;font-size:14px}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:9px;
+    padding:10px 15px;min-width:120px}
+  .stat b{display:block;font-size:21px;letter-spacing:-.02em;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .stat span{font-size:12px;color:var(--muted)}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:9px;padding:14px 16px;margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:20px 0 6px;
+    position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
+  input[type=search]{flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--line);
+    border-radius:8px;background:var(--panel);color:var(--ink);font-size:14px}
+  .chip{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);
+    color:var(--muted);cursor:pointer;font-size:12.5px}
+  .chip.on{background:var(--soft);border-color:var(--accent);color:var(--ink);font-weight:600}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);
+    margin:36px 0 4px;font-weight:700}
+  .lede{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);font-weight:600}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+  tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--soft)}
+  a{color:var(--accent);text-decoration:none;font-weight:600}
+  a:hover{text-decoration:underline}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+  .rank{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;
+    border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .pub{border-color:var(--ok);color:var(--ok)}
+  .prv{border-color:var(--warn);color:var(--warn)}
+  .why{color:var(--muted);font-size:13px}
+  .hide{display:none}
+  footer{margin-top:44px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+  @media(max-width:760px){ td,th{font-size:13px;padding:8px} body{padding:20px 12px 50px} }
+</style>
+<div class="wrap">
+<h1>Bendis Design — dizi sponsorlukları &amp; Facebook grup hedefleri</h1>
+<p class="sub">Sponsor olunan dizilerden kadroya, kadrodan fandom gruplarına · 17 Ağustos 2026</p>
+
+<div class="stats" id="stats"></div>
+
+<div class="note">
+<b>Yöntem.</b> Hedefler bendisdesign.com'daki “Sponsored TV Series” menüsünden geriye doğru kuruldu: sponsor olunan dizi → kadro → oyuncunun fandom büyüklüğü → o fandomun Facebook grupları. Üye sayıları Facebook grup aramasından canlı okundu.
+<br><br>
+<b>Nasıl post atmalı.</b> Fan grupları (Bölüm 3–5) satış postu kabul etmez: önce değer üreten içerik — dizideki sahne, “Ayla'nın bu bölümdeki kolyesi”, bölüm sonrası tartışma — sonra admin ile anlaşmalı yerleşim. Takı pazaryeri grupları (Bölüm 7) ürün postu için zaten açık; mağaza linkini doğrudan paylaşabilirsin.
+</div>
+
+<div class="bar">
+  <input type="search" id="q" placeholder="Grup, dizi veya oyuncu ara…">
+  <button class="chip on" data-f="all">Tümü</button>
+  <button class="chip" data-f="sponsor">Sponsorluklar</button>
+  <button class="chip" data-f="top">Top 10</button>
+  <button class="chip" data-f="cur">Güncel dizi grupları</button>
+  <button class="chip" data-f="curact">Güncel oyuncular</button>
+  <button class="chip" data-f="classic">Klasik dizi &amp; oyuncu</button>
+  <button class="chip" data-f="general">Genel dizi</button>
+  <button class="chip" data-f="jewel">Takı pazaryeri</button>
+</div>
+
+<div id="root"></div>
+
+<footer>
+Üye sayıları 17 Ağu 2026'da Facebook grup aramasından okundu; “—” işaretli satırlar web aramasından geldi, sayı doğrulanmadı. Kadro verileri: Wikipedia, Star TV, Kanal D, NOW, Show TV, Netflix. Fandom büyüklükleri: HypeAuditor, Ağustos 2026.
+</footer>
+</div>
+
+<script>
+const G = id => `https://www.facebook.com/groups/${id}/`;
+
+const SPONSOR = [
+ ["Uzak Şehir","Far Away","2024–2026","Kanal D","Ozan Akbaba, Sinem Ünsal, Müfit Kayacan","Yayında · 3. sezon 2026 · İtalya (Canale 5) patlaması"],
+ ["Doğanın Kanunu","Nature of Love","2026–","Star TV","Alperen Duymaz, Özge Yağız, Hakan Yılmaz","Yayında · yaz dizisi"],
+ ["Sevdiğim Sensin","The One I Love","2026","Star TV","Aytaç Şaşmaz, Helin Kandemir, Özlem Conker","Yeni bitti"],
+ ["Kıskanmak","Envy","2025–2026","NOW","Özgü Namal, Selahattin Paşalı, Mehmet Günsür, Hafsanur Sancaktutan","Prestij yapım"],
+ ["Deha","The Good &amp; The Bad","2024–2025","Show TV","Aras Bulut İynemli, Melis Sezen, Taner Ölmez","Yüksek reyting"],
+ ["Leyla: Hayat… Aşk… Adalet…","Leyla","2024–2025","NOW","Cemre Baysel, Alperen Duymaz, Gonca Vuslateri","—"],
+ ["Kimler Geldi Kimler Geçti","Thank You Next","2024–2025","Netflix","Serenay Sarıkaya, Metin Akdülger, Boran Kuzum, Bade İşçil","Netflix · global eşzamanlı"],
+ ["Yargı","Family Secrets","2021–2024","Kanal D","Kaan Urgancıoğlu, Pınar Deniz","🏆 2023 Uluslararası Emmy · LatAm/İspanya çok güçlü"],
+ ["Aile","Family","2023–2024","Show TV","Kıvanç Tatlıtuğ, Serenay Sarıkaya, Nur Sürer","Güçlü ihracat"],
+ ["Şahane Hayatım","My Wonderful Life","2023–2024","NOW (FOX)","Hilal Altınbilek, Onur Tuna, Yiğit Özşener","—"],
+ ["Ada Masalı","Be My Sunshine","2021","Star TV","Ayça Ayşin Turan, Alp Navruz","Streaming'de ikinci hayat"],
+ ["Çukur","The Pit","2017–2021","Show TV","Aras Bulut İynemli, Dilan Çiçek Deniz, Erkan Kolçak Köstendil","Kült · MENA/Balkanlar/Orta Asya"],
+ ["Menajerimi Ara","Call My Agent","2020–2021","Star TV","Barış Falay, Ahsen Eroğlu, Fatih Artman","Yurt içi ağırlıklı"],
+ ["Kuzgun","Raven","2019","Star TV","Barış Arduç, Burcu Biricik","—"],
+ ["Ufak Tefek Cinayetler","Stiletto Vendetta","2017–2018","Star TV","Gökçe Bahadır, Bade İşçil, Aslıhan Gürbüz","Yurt içi ağırlıklı"],
+ ["Cesur ve Güzel","Brave and Beautiful","2016–2017","Star TV","Kıvanç Tatlıtuğ, Tuba Büyüküstün","İtalya (Canale 5) kanıtlı pazar"],
+ ["Kara Sevda","Endless Love","2015–2017","Star TV","Burak Özçivit, Neslihan Atagül, Kaan Urgancıoğlu","🏆 2017 Emmy · “Amor Eterno” LatAm fenomeni"],
+ ["Kara Para Aşk","Black Money Love","2014–2015","ATV","Engin Akyürek, Tuba Büyüküstün","LatAm/İspanya çok güçlü"],
+ ["Medcezir","Medcezir","2013–2015","Star TV","Çağatay Ulusoy, Serenay Sarıkaya, Hazar Ergüçlü","Kuşak yaratan yapım"]
+];
+
+const TOP = [
+ [1,"Burak Özçivit","Kara Sevda","24,7M","Çok yüksek","MENA, LatAm, İspanya, Balkanlar, Güney Asya"],
+ [2,"Neslihan Atagül","Kara Sevda","14,2M","Çok yüksek","LatAm, İspanya, MENA, Balkanlar"],
+ [3,"Çağatay Ulusoy","Medcezir","10,9M","Çok yüksek","MENA, Balkanlar, Güney Asya, İtalya"],
+ [4,"Serenay Sarıkaya","Medcezir + Aile + Kimler Geldi Kimler Geçti","10,8M","Çok yüksek","MENA, Balkanlar, Güney Asya"],
+ [5,"Aras Bulut İynemli","Çukur + Deha","10,6M","Yüksek","MENA, Balkanlar, Orta Asya, Pakistan"],
+ [6,"Barış Arduç","Kuzgun","7,3M","Çok yüksek","MENA, Güney Asya, LatAm, Balkanlar"],
+ [7,"Tuba Büyüküstün","Cesur ve Güzel + Kara Para Aşk","6,2M","Çok yüksek","LatAm, İspanya, İtalya, MENA"],
+ [8,"Kıvanç Tatlıtuğ","Aile + Cesur ve Güzel","Hesap kapalı (Ağu 2026)","Çok yüksek","İtalya, İspanya, LatAm, MENA"],
+ [9,"Kaan Urgancıoğlu","Kara Sevda + Yargı","2,5M","Çok yüksek","LatAm, İspanya, MENA, Balkanlar"],
+ [10,"Engin Akyürek","Kara Para Aşk","2,5M","Çok yüksek","Şili/Peru/Arjantin, İspanya, MENA"]
+];
+
+// [dizi/oyuncu, grup adı, üye, tür, pazar/dil, id]
+const CUR = [
+ ["Uzak Şehir","UZAK ŞEHİR ✅ Far Away, EN TİERRA LEJANA – CİUDAD LEJANA","162K","Public","Çok dilli · İspanyolca","4643912515658174"],
+ ["Uzak Şehir","UZAK ŞEHİR KANALD","113K","Public","Türkçe","1697914891121785"],
+ ["Uzak Şehir","Uzak Şehir (Al Hayba Remake) Dizi International","60K","Public","Uluslararası","642438702881734"],
+ ["Uzak Şehir","💙 Uzak Şehir Dizisi 💙","58K","Public","Türkçe","1323094722687366"],
+ ["Uzak Şehir","Uzak Şehir Ailesi | English &amp; Turkish Updates","56K","Public","İngilizce + Türkçe","2494882580855901"],
+ ["Uzak Şehir","UZAK ŞEHİR DİZİSİ","43K","Public","Türkçe","382496223314689"],
+ ["Uzak Şehir","Uzak Şehir","29K","Public","Türkçe","573712222378431"],
+ ["Uzak Şehir","Uzak Şehir Dizi","23K","Private","Türkçe","553970475553914"],
+ ["Uzak Şehir","Uzak Şehir Dizisi","17K","Public","Türkçe","2823398267892300"],
+ ["Uzak Şehir","UZAK ŞEHİR ✅","16K","Public","Türkçe","722911746862034"],
+ ["Uzak Şehir","Uzak Şehir","14K","Public","Türkçe","4246956725321110"],
+ ["Uzak Şehir","UZAK ŞEHİR DİZİ / KANAL D / OZAN AKBABA / SİNEM ÜNSAL 🔥","3,5K","Public","Türkçe","836396808169332"],
+ ["Sevdiğim Sensin","Sevdiğim Sensin","70K","Private","Türkçe","4524938950913429"],
+ ["Sevdiğim Sensin","Sevdiğim Sensin Dizisi","50K","Public","Türkçe","402238687586660"],
+ ["Sevdiğim Sensin","Sevdiğim Sensin Hayranları","50K","Public","Türkçe","975568807129020"],
+ ["Sevdiğim Sensin","Sevdiğim Sensin Dizisi","22K","Public","Türkçe","647009149308888"],
+ ["Sevdiğim Sensin","💕 Sevdiğim Sensin 💕","3,2K","Private","Türkçe","4134828243215307"],
+ ["Sevdiğim Sensin","❤️ SEVDİĞİM ❤️ SENSİN ♥️","2,9K","Private","Türkçe","327793704686970"],
+ ["Yargı","Yargı Dizisi","123K","Public","Türkçe","318874666676219"],
+ ["Yargı","Yargı Dizisi","19K","Private","Türkçe","1487028838304237"],
+ ["Yargı","SECRETOS DE FAMILIA Fans — Serie turca","—","—","İspanyolca / LatAm","532332181311102"],
+ ["Yargı","Novelas Turcas — Pınar Deniz y Kaan Urgancıoğlu","—","—","İspanyolca / LatAm","257237383876520"],
+ ["Deha","Deha Dizisi","72K","Private","Türkçe","CukurTVDizisi"],
+ ["Deha","مسلسل العبقري — DEHA DIZISI","68K","Private","Arapça / MENA","436481730343309"],
+ ["Deha","DEHA","1,5K","Public","Türkçe","102931846887446"],
+ ["Leyla","LEYLA DİZİSİ","16K","Private","Türkçe","994089704306520"],
+ ["Kıskanmak","Kıskanmak!","10K","Private","Türkçe","697876701750759"],
+ ["Doğanın Kanunu","Doğanın Kanunu","1,6K","Public","Türkçe · yeni kurulmuş","569350930595921"]
+];
+
+const CURACT = [
+ ["Özge Yağız","Doğanın Kanunu","Özge Yağız fans","788K","Private","Uluslararası","1976246005884958"],
+ ["Özge Yağız","Doğanın Kanunu","Özge Yağız","96K","Private","Türkçe","192496802501622"],
+ ["Özge Yağız","Doğanın Kanunu","Özge Yağız Public Group","64K","Public","Türkçe","1504024616619721"],
+ ["Özge Yağız","Doğanın Kanunu","ozge yagiz","52K","Public","Uluslararası","1245080649811720"],
+ ["Özge Yağız","Doğanın Kanunu","Ozge Yagiz","15K","Public","Uluslararası","236428832353208"],
+ ["Özge Yağız","Doğanın Kanunu","özge yağiz","14K","Public","Türkçe","518316079703549"],
+ ["Özge Yağız","Doğanın Kanunu","Ozge Yagiz fan club","13K","Public","Uluslararası","559518739364019"],
+ ["Özge Yağız","Doğanın Kanunu","Neslihan Atagül 🌹 Özge Yağız &amp; Hande Erçel Fans","8,8K","Private","Uluslararası","1659567557772734"],
+ ["Özge Yağız","Doğanın Kanunu","Özge Yağız Lover's 💞","5,4K","Public","Uluslararası","318275766908445"],
+ ["Özge Yağız","Doğanın Kanunu","ozge yagiz 💋 emir and rehan ❤","5,4K","Public","Uluslararası","790382195148426"],
+ ["Ozan Akbaba","Uzak Şehir","Ozan Akbaba'yı Beğenen Arkadaşlar","119K","Public","Türkçe","365282557172205"],
+ ["Ozan Akbaba","Uzak Şehir","Ozan Akbaba","28K","Public","Türkçe","765920362669779"],
+ ["Ozan Akbaba","Uzak Şehir","Ozan Akbaba (Cihan Albora)","13K","Public","Türkçe","220352449948642"],
+ ["Sinem Ünsal","Uzak Şehir","Sinem Ünsal","64K","Public","Türkçe","1181630769799997"],
+ ["Sinem Ünsal","Uzak Şehir","Sinem Ünsal ™","53K","Public","Uluslararası","817769301096395"],
+ ["Sinem Ünsal","Uzak Şehir","Sinem Unsal 1","44K","Public","Uluslararası","8700083080036706"],
+ ["Sinem Ünsal","Uzak Şehir","sinem unsal 2","21K","Public","Uluslararası","1321418079524161"],
+ ["Sinem Ünsal","Uzak Şehir","sinem unsal","13K","Public","Uluslararası","1568912957800418"],
+ ["Sinem Ünsal","Uzak Şehir","عشاق Sinem Ünsal","10K","Public","Arapça / MENA","321995509008508"],
+ ["Sinem Ünsal","Uzak Şehir","Sinem Unsal","8,1K","Public","Uluslararası","1360747151828680"],
+ ["Sinem Ünsal","Uzak Şehir","Sinem Unsal 3","5,2K","Public","Uluslararası","723322623723295"],
+ ["Sinem Ünsal","Uzak Şehir","Uzak Şehir – Sinem Ünsal","880","Public","Türkçe","1478320343830562"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya","48K","Private","Türkçe","Serenays"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya","12K","Public","Türkçe","209846366058091"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya Hayran Grubu","8,8K","Public","Türkçe","324510061432520"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya","2,3K","Public","Türkçe","267839536739929"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya Fan","742","Public","Türkçe","721084948002217"],
+ ["Serenay Sarıkaya","Aile · Medcezir · Kimler Geldi","Serenay Sarıkaya","400","Public","Türkçe","1067991249897544"],
+ ["Serenay + Kıvanç","Aile","Aile Dizi — Kıvanç Tatlıtuğ ile Serenay Sarıkaya","—","—","Türkçe","3570851273198973"],
+ ["Ayça Ayşin Turan","Ada Masalı","Ayca Aysin Turan","80K","Public","Uluslararası","3104973029813837"],
+ ["Ayça Ayşin Turan","Ada Masalı","ayca aysin turan","20K","Public","Uluslararası","636094260775068"],
+ ["Ayça Ayşin Turan","Ada Masalı","Ayça Ayşin Turan &amp; Cemre Baysel","10K","Private","Uluslararası","1168399108291522"],
+ ["Cemre Baysel","Leyla","Cemre Baysel","15K","Public","Türkçe","700592508517336"],
+ ["Cemre Baysel","Leyla","Cemre Baysel 💯","13K","Public","Uluslararası","524668042658803"],
+ ["Cemre Baysel","Leyla","Cemre Baysel","5,4K","Public","Türkçe","594836605021278"],
+ ["Melis Sezen","Deha","Melis Sezen","13K","Public","Türkçe","404374294477594"],
+ ["Alperen Duymaz","Doğanın Kanunu · Leyla","ALPEREN DUYMAZ","2,7K","Public","Türkçe","1381276932389848"],
+ ["Alperen Duymaz","Doğanın Kanunu · Leyla","Alperen Duymaz · Mert Ramazan · Caner Topçu","1,8K","Public","Türkçe","1650740582132784"],
+ ["Alperen Duymaz","Doğanın Kanunu · Leyla","Alperen Duymaz &amp; Caner Cindoruk Fans Club Internacional","804","Private","İspanyolca / LatAm","231455002087832"],
+ ["Hafsanur Sancaktutan","Kıskanmak","Totul despre Kerem Bürsin și Hafsanur Sancaktutan","1,4K","Private","Romence","1179702932527226"],
+ ["Hafsanur Sancaktutan","Kıskanmak","Hafsanur Sancaktutan","204","Public","Türkçe","1646350032529857"],
+ ["Aytaç Şaşmaz","Sevdiğim Sensin","aytaç şaşmaz hayranları","504","Public","Türkçe","153522225304480"],
+ ["Aytaç Şaşmaz","Sevdiğim Sensin","aytaç şaşmaz","376","Public","Türkçe","374020636434215"],
+ ["Aytaç Şaşmaz","Sevdiğim Sensin","Sevdiğim Sensin · Aytaç Şaşmaz · Helin Kandemir","130","Public","Türkçe","4000448940221333"]
+];
+
+const CLASSIC = [
+ ["Burak Özçivit","Kara Sevda","Burak Özçivit Official","—","Uluslararası","burakozcivitofficial"],
+ ["Burak Özçivit","Kara Sevda","BURAK ÖZÇİVİT","—","Uluslararası","674176497443930"],
+ ["Burak Özçivit","Kara Sevda","Burak Özçivit","—","Uluslararası","235972278506485"],
+ ["Burak + Neslihan","Kara Sevda","💗 Burak Özçivit &amp; Neslihan Atagül ♾ Kara Sevda ♾ Fan Club","—","Uluslararası","1335844353588567"],
+ ["Burak + Neslihan","Kara Sevda","💋 Burak Özçivit &amp; Neslihan Atagül Fan Club (Greek)","—","Yunanistan","293375681127698"],
+ ["Neslihan Atagül","Kara Sevda","Fans de la bella actriz Neslihan Atagül","—","İspanyolca / LatAm","539224717067213"],
+ ["Neslihan Atagül","Kara Sevda","Neslihan Atagül","—","Uluslararası","3837599759593965"],
+ ["Kara Sevda","Kara Sevda","Kara Sevda: Amor Eterno / Tiempo de Amar","—","İspanyolca / LatAm","1030669753705902"],
+ ["Kara Sevda","Kara Sevda","Kara Sevda Amor Eterno — Burak Özçivit","—","İspanyolca / LatAm","1177586742608592"],
+ ["Kara Sevda","Kara Sevda","Endless Love Fan Group 💞 KARA SEVDA PH","—","Filipinler","2924286281226870"],
+ ["Kara Sevda","Kara Sevda","ENDLESS LOVE (Kara Sevda)","—","İngilizce","862883191239295"],
+ ["Kara Sevda","Kara Sevda","Kara Sevda Season 3 Updates","—","İngilizce","853295658458561"],
+ ["Kara Sevda","Kara Sevda","NESLIHAN AND BURAK — Kara Sevda / Endless Love","—","Balkanlar","737098904753096"],
+ ["Kara Sevda","Kara Sevda","Turkish drama Endless Love / Kara Sevda (Taglish)","—","Filipinler","2624153441228215"],
+ ["Kara Sevda","Kara Sevda","kara sevda endless love s2","—","İngilizce","952381099826022"],
+ ["Çağatay Ulusoy","Medcezir","Çağatay Ulusoy","—","Uluslararası","551546934867313"],
+ ["Çağatay Ulusoy","Medcezir","Çağatay Ulusoy — İçerde — Hungary","—","Macaristan","196067307549592"],
+ ["Çağatay Ulusoy","Medcezir","Çağatay Ulusoy &amp; Hazal Kaya — Adını Feriha Koydum","—","Uluslararası","506251600873161"],
+ ["Aras Bulut İynemli","Çukur + Deha","Aras Bulut İynemli Fan Club","—","Uluslararası","192169751671749"],
+ ["Barış Arduç","Kuzgun","Barış Arduç","—","Uluslararası","7893491847363363"],
+ ["Barış Arduç","Kuzgun","Barış Arduç","—","Uluslararası","1014749146932416"],
+ ["Barış Arduç","Kuzgun","Barış Arduç","—","Uluslararası","1640609436455099"],
+ ["Kıvanç Tatlıtuğ","Aile + Cesur ve Güzel","Kıvanç Tatlıtuğ Official","—","Uluslararası","455236612808518"],
+ ["Kıvanç Tatlıtuğ","Aile + Cesur ve Güzel","Aşk Kıvanç","—","Uluslararası","AskKivanc"],
+ ["Kıvanç Tatlıtuğ","Aile + Cesur ve Güzel","Who Love Kıvanç Tatlıtuğ","—","Uluslararası","153912098669318"],
+ ["Kaan Urgancıoğlu","Kara Sevda + Yargı","Kaan Urgancıoğlu Fan France","—","Fransa","391342239083958"],
+ ["Kaan Urgancıoğlu","Kara Sevda + Yargı","Kaan Urgancıoğlu — România 🖤","—","Romanya","841834605969783"],
+ ["Kaan Urgancıoğlu","Kara Sevda + Yargı","Kaan Urgancıoğlu","—","Uluslararası","1030545154206835"],
+ ["Engin Akyürek","Kara Para Aşk","Engin AKYÜREK","—","Uluslararası","303645239693411"],
+ ["Engin Akyürek","Kara Para Aşk","engin akyurek","—","Uluslararası","2615167651853392"],
+ ["Engin Akyürek","Kara Para Aşk","Engin Akyürek — an extraordinary actor and ordinary man","—","İngilizce","1515653745424453"]
+];
+
+const GENERAL = [
+ ["Turkish Series","288K","Public","En büyük genel İngilizce dizi grubu","282690123713791"],
+ ["Turkish drama in English subtitles","168K","Private","Büyük ve aktif; onay gerekli","4997916146991475"],
+ ["Turkish Drama Series / Chikahan","162K","Private","Yüksek üye, orta post hacmi","4034383883243636"],
+ ["Turkish Series Experts","150K","Public","Tartışma ağırlıklı, spam düşük","723495718786283"],
+ ["Turkish Series English Subtitles 2024 / 2025","111K","Public","Günde 20+ post","386266525856814"],
+ ["Turkish Series with English Subtitles","105K","Public","Günde 90+ post — en aktifi","turkishserieswithenglishsubtitles"],
+ ["Arafta Dizi","83K","Public","Güney Asya dizi kitlesi","849895800875283"],
+ ["Turkish Lovers","80K","Public","Geniş Türkiye + dizi ilgisi","923531501772232"],
+ ["Turkish lover ❤️🔥","57K","Public","Görsel post ağırlıklı","816368459606876"],
+ ["Turkish Series &amp; Movies Entertainment World","45K","Public","Dizi + film kesişimi","turkishseriesandmovieswithengsubs"],
+ ["TURKSE SEPIES","44K","Public","Çok dilli, günde 20+ post","1097719274079711"],
+ ["Turkish Actress","39K","Public","Kadın oyuncu odaklı — takı alıcısına en yakın","354978889910735"],
+ ["all Turkish drama &amp; series","32K","Public","Günde 70+ post — hızlı akış","793962649413728"],
+ ["Turkish Dramas with English Subtitles","23K","Public","Köklü grup","TurkishDramaswithEnglishSubtitles"],
+ ["Turkish series with English subtitles","23K","Public","Günde 7 post — post uzun süre görünür","1355818594572858"],
+ ["Arafta DiZi 🇧🇩🇹🇷","19K","Public","Bölgesel topluluk","1361368556005866"],
+ ["Turkish Dramas 🇵🇰🇹🇷","15K","Public","Günde 30+ post","416456376210922"],
+ ["ARAFTA ♡","15K","Public","Fan-edit kültürü","1465469065089829"],
+ ["Turkish Drama fans from BD 🇹🇷🇧🇩","13K","Public","Bölgesel topluluk","972372970600423"],
+ ["Turkish Dizi Addicts","10K","Private","Küçük ama yüksek etkileşim","594044388206793"],
+ ["Netflix Dizi &amp; Film Tavsiyeleri","323K","Public","Türkçe · genel dizi/film","netflixdizifilmoneri"],
+ ["Netflix Türkiye, Film &amp; Dizi Tavsiye","302K","Public","Türkçe · genel dizi/film","netflixturkiyegrup"],
+ ["Film ve Dizi Önerileri","264K","Public","Türkçe · genel dizi/film","563365935112070"],
+ ["Dizi Talk — Turkish Dizi English Fans","—","—","Web aramasından; katılırken doğrula","572663113240632"],
+ ["Turkish series Fan Club","—","—","Web aramasından; katılırken doğrula","2672802376325059"],
+ ["Turkish Lovers International 💜🦋","—","—","Web aramasından; katılırken doğrula","228560322256370"]
+];
+
+const JEWEL = [
+ ["Handmade Crafts — Buy Sell &amp; Trade","518K","Public","En büyük el yapımı pazaryeri","3245484102409993"],
+ ["gold plated jeweller","434K","Public","Çok büyük; kaplama odaklı — gerçek 14K farkını öne çıkar","296595979422571"],
+ ["Jewelry design 13","351K","Public","Tasarım odaklı geniş kitle","455565419268120"],
+ ["The Vintage And Antique Jewelry Group","224K","Public","Miras/yadigâr bakışlı alıcılar","1026912478101260"],
+ ["The Gold Jewellery Group Buy &amp; Sell","217K","Public","Altın odaklı alım niyeti","248670432926559"],
+ ["Gold jewellery design","121K","Public","Tasarım + satış","652696412353824"],
+ ["Jewelry in USA","78K","Public","ABD hedefli — Meta pazarınla örtüşüyor","441307452094704"],
+ ["open etsy sellers, small businesses &amp; customers","57K","Public","Satıcı + alıcı karışık","2959799927599510"],
+ ["Handmade jewelry makers — tips &amp; network","50K","Public","Üretici ağı; marka hikâyesi tutar","335360114197216"],
+ ["💎 Jewelry Marketplace | USA, UK, CA &amp; EU","46K","Public","Çok pazarlı pazaryeri","740858050388505"],
+ ["Selling And Buying Handmade Jewelry","34K","Public","El yapımı satış amaçlı kurulmuş","381508635349988"],
+ ["Buy Sell Handmade Art Craft","33K","Public","Genel el yapımı satış","buysellhandmadecraft"],
+ ["The Handmade Marketplace","27K","Public","Sadece el yapımı tanıtım","2348925088566595"],
+ ["Support Small Business Owners","24K","Public","Genel küçük işletme tanıtımı","198297667565245"],
+ ["Jewelers &amp; Goldsmiths Group","22K","Public","Zanaat/ustalık açısı","208678262517633"],
+ ["Handmade Jewelry","21K","Public","Doğrudan el yapımı grubu","412820972209446"],
+ ["Promote Your Crafty Business!!!","11K","Public","Zanaat tanıtım günleri","PromoteYourCraftyBusiness"],
+ ["Unique Handmade Jewelry","9,5K","Public","Küçük, tasarım odaklı","277486949450066"],
+ ["jewelry buyers sellers USA, UK, AU, CA","8,2K","Public","Alıcı niyeti yüksek","4045593902420240"],
+ ["Jewelry Vintage to Modern — Buy &amp; Sell USA","7K","Public","Sadece ABD satış grubu","672030089876013"],
+ ["Jewelry in USA","6,8K","Public","Aynı adın ikinci, küçük grubu","714929834268883"],
+ ["GOLD JEWELRY WORLDWIDE BUY &amp; SELL","6,3K","Public","Altın odaklı","goldjewelryworldwide"],
+ ["Handmade Jewelry and Gifts","4,6K","Public","Hediye açısı hazır","397561450784318"]
+];
+
+const DATA = [
+ {s:"sponsor", t:"1. Bendis Design'ın sponsor olduğu diziler",
+  lede:"bendisdesign.com “Sponsored TV Series” menüsünden; güncel yayındakiler en üstte.",
+  head:["Dizi","Uluslararası ad","Yıl","Kanal","Başrol kadro","Not"],
+  rows: SPONSOR.map(r=>[{txt:r[0],b:1},r[1],{txt:r[2],n:1},r[3],r[4],{txt:r[5],w:1}])},
+
+ {s:"top", t:"2. Öncelik sırası — sponsorlu dizilerden çıkan Top 10 oyuncu",
+  lede:"Sıralama: uluslararası fandom büyüklüğü × kaç Bendis dizisinde yer aldığı. 4, 5, 7, 8 ve 9 numara birden fazla sponsorlu dizide oynuyor — kampanya başına iki kat değer.",
+  head:["#","Oyuncu","Bendis sponsorlu dizi(ler)","Instagram","Uluslararası güç","Ana pazarlar"],
+  rows: TOP.map(r=>[{txt:r[0],r:1},{txt:r[1],b:1},r[2],{txt:r[3],n:1},r[4],{txt:r[5],w:1}])},
+
+ {s:"cur", t:"3. Güncel &amp; öncelikli sponsorlu dizilerin grupları",
+  lede:"Uzak Şehir, Sevdiğim Sensin, Yargı, Deha, Leyla, Kıskanmak, Doğanın Kanunu. Bölüm yayın gecesi post atmak için en verimli yer — akış zaten o dizi hakkında.",
+  head:["Dizi","Grup","Üye","Tür","Pazar / dil","Bağlantı"],
+  rows: CUR.map(r=>[{txt:r[0],b:1},r[1],{txt:r[2],n:1},{tag:r[3]},{txt:r[4],w:1},{link:r[5]}])},
+
+ {s:"curact", t:"4. Bu dizilerin oyuncu grupları",
+  lede:"Özge Yağız'ın 788K'lık grubu tek başına listedeki en büyük fandom havuzu. Sinem Ünsal ve Ozan Akbaba, Uzak Şehir yayındayken en hızlı büyüyen iki isim.",
+  head:["Oyuncu","Bendis dizisi","Grup","Üye","Tür","Pazar / dil","Bağlantı"],
+  rows: CURACT.map(r=>[{txt:r[0],b:1},{txt:r[1],w:1},r[2],{txt:r[3],n:1},{tag:r[4]},{txt:r[5],w:1},{link:r[6]}])},
+
+ {s:"classic", t:"5. Klasik sponsorlu dizi &amp; Top 10 oyuncu grupları",
+  lede:"Kara Sevda / Amor Eterno grupları LatAm ve İspanya'da hâlâ fazlasıyla aktif. Üye sayıları web aramasından geldiği için doğrulanmadı.",
+  head:["Oyuncu / dizi","Bendis dizisi","Grup","Üye","Pazar / dil","Bağlantı"],
+  rows: CLASSIC.map(r=>[{txt:r[0],b:1},{txt:r[1],w:1},r[2],{txt:r[3],n:1},{txt:r[4],w:1},{link:r[5]}])},
+
+ {s:"general", t:"6. Genel Türk dizisi grupları",
+  lede:"Tek bir oyuncuya bağlı olmayan geniş erişim. Sponsorluk duyurusu ve “As Seen On” içeriği için taban.",
+  head:["Grup","Üye","Tür","Neden uygun","Bağlantı"],
+  rows: GENERAL.map(r=>[r[0],{txt:r[1],n:1},{tag:r[2]},{txt:r[3],w:1},{link:r[4]}])},
+
+ {s:"jewel", t:"7. Takı &amp; el yapımı pazaryeri grupları (satış serbest)",
+  lede:"Ürün postu bu grupların zaten amacı — mağaza linkini doğrudan paylaşmak için en güvenli yer.",
+  head:["Grup","Üye","Tür","Neden uygun","Bağlantı"],
+  rows: JEWEL.map(r=>[r[0],{txt:r[1],n:1},{tag:r[2]},{txt:r[3],w:1},{link:r[4]}])}
+];
+
+function cell(c){
+  if(typeof c === 'string' || typeof c === 'number') return `<td>${c}</td>`;
+  if(c.link) return `<td><a href="${G(c.link)}" target="_blank" rel="noopener">Aç ↗</a></td>`;
+  if(c.tag) return `<td><span class="tag ${c.tag==='Public'?'pub':c.tag==='Private'?'prv':''}">${c.tag}</span></td>`;
+  const cls = c.n?'num':c.w?'why':c.r?'rank':'';
+  return `<td class="${cls}">${c.b?`<b>${c.txt}</b>`:c.txt}</td>`;
+}
+
+document.getElementById('root').innerHTML = DATA.map(sec=>`
+ <section data-sec="${sec.s}">
+  <h2>${sec.t}</h2>
+  <p class="lede">${sec.lede}</p>
+  <table>
+   <thead><tr>${sec.head.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+   <tbody>${sec.rows.map(r=>`<tr data-n="${r.map(c=>typeof c==='object'?(c.txt||c.link||c.tag||''):c).join(' ').toLowerCase().replace(/"/g,'')}">${r.map(cell).join('')}</tr>`).join('')}</tbody>
+  </table>
+ </section>`).join('');
+
+// istatistikler
+const groupCount = CUR.length + CURACT.length + CLASSIC.length + GENERAL.length + JEWEL.length;
+const parseM = s => { if(!s || s==='—') return 0;
+  const v = parseFloat(s.replace(',','.'));
+  return s.includes('K') ? v*1000 : v; };
+const reach = [...CUR.map(r=>r[2]), ...CURACT.map(r=>r[3]), ...GENERAL.map(r=>r[1]), ...JEWEL.map(r=>r[1])]
+  .reduce((a,s)=>a+parseM(s),0);
+document.getElementById('stats').innerHTML = [
+  [SPONSOR.length,"sponsorlu dizi"],
+  [groupCount,"Facebook grubu"],
+  [(reach/1e6).toFixed(1).replace('.',',')+"M","doğrulanmış toplam üye"],
+  [CURACT.length+CLASSIC.length,"oyuncu grubu"]
+].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+
+const q=document.getElementById('q'); let filter='all';
+function apply(){
+  const term=q.value.trim().toLowerCase();
+  document.querySelectorAll('section').forEach(sec=>{
+    const on = filter==='all' || sec.dataset.sec===filter;
+    let vis=0;
+    sec.querySelectorAll('tbody tr').forEach(tr=>{
+      const ok = on && (!term || tr.dataset.n.includes(term));
+      tr.classList.toggle('hide',!ok); if(ok) vis++;
+    });
+    sec.classList.toggle('hide', vis===0);
+  });
+}
+q.addEventListener('input',apply);
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); filter=c.dataset.f; apply();
+}));
+</script>
+</html>
